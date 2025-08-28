@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor de Unidades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+    }
+    h1 {
+      color: #333;
+    }
+    .converter {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+    input, select {
+      margin-top: 5px;
+      padding: 8px 10px;
+      width: 100%;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 0;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #222;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Conversor de Unidades</h1>
+  <div class="converter">
+    <label for="unit-type">Tipo de conversión:</label>
+    <select id="unit-type">
+      <option value="m-to-ft">Metros a Pies</option>
+      <option value="kg-to-lb">Kilogramos a Libras</option>
+      <option value="c-to-f">Celsius a Fahrenheit</option>
+    </select>
+
+    <label for="input-value">Valor a convertir:</label>
+    <input type="number" id="input-value" placeholder="Ingresa un número" />
+
+    <button id="convert-btn">Convertir</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const unitType = document.getElementById('unit-type');
+    const inputValue = document.getElementById('input-value');
+    const convertBtn = document.getElementById('convert-btn');
+    const resultDiv = document.getElementById('result');
+
+    convertBtn.addEventListener('click', () => {
+      const value = parseFloat(inputValue.value);
+      if (isNaN(value)) {
+        resultDiv.textContent = 'Por favor, ingresa un número válido.';
+        return;
+      }
+
+      let resultText = '';
+
+      switch (unitType.value) {
+        case 'm-to-ft':
+          // 1 metro = 3.28084 pies
+          resultText = `${value} metros = ${(value * 3.28084).toFixed(3)} pies`;
+          break;
+        case 'kg-to-lb':
+          // 1 kg = 2.20462 libras
+          resultText = `${value} kilogramos = ${(value * 2.20462).toFixed(3)} libras`;
+          break;
+        case 'c-to-f':
+          // Celsius a Fahrenheit
+          resultText = `${value} °C = ${((value * 9/5) + 32).toFixed(2)} °F`;
+          break;
+        default:
+          resultText = 'Tipo de conversión no soportado.';
+      }
+
+      resultDiv.textContent = resultText;
+    });
+  </script>
+
+</body>
+</html>
