@@ -2,19 +2,19 @@
   "name": "Convertidor",
   "short_name": "Convertidor",
   "description": "Un convertidor de unidades simple y eficiente.",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "background_color": "#ffffff",
   "theme_color": "#00BFFF",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icono-192.png",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-PwU24s40kWWdABXQKW4-DFF30TninCwxA&s",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icono-512.png",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-PwU24s40kWWdABXQKW4-DFF30TninCwxA&s",
       "sizes": "512x512",
       "type": "image/png"
     }
