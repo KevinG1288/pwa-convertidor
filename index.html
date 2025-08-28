@@ -2,10 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Conversor de Unidades</title>
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="icono-192.png" type="image/png">
+  <link rel="manifest" href="manifest.json" />
+  <!-- Ícono de la página -->
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-PwU24s40kWWdABXQKW4-DFF30TninCwxA&s" type="image/png" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,6 +20,10 @@
     }
     h1 {
       color: #333;
+    }
+    .app-icon {
+      margin: 15px 0 25px 0;
+      border-radius: 20px;
     }
     .converter {
       background: white;
@@ -70,6 +75,14 @@
 <body>
 
   <h1>Conversor de Unidades</h1>
+
+  <!-- Ícono visible en la página -->
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-PwU24s40kWWdABXQKW4-DFF30TninCwxA&s" 
+       alt="Icono del Conversor" 
+       width="120" 
+       height="120" 
+       class="app-icon">
+
   <div class="converter">
     <label for="unit-type">Tipo de conversión:</label>
     <select id="unit-type">
@@ -121,12 +134,13 @@
       resultDiv.textContent = resultText;
     });
   </script>
+
   <script>
     if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log('Service Worker registrado'))
-    .catch(err => console.error('Error registrando Service Worker:', err));
-}
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('Service Worker registrado'))
+        .catch(err => console.error('Error registrando Service Worker:', err));
+    }
   </script>
 
 </body>
