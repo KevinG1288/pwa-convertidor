@@ -4,7 +4,7 @@ const urlsToCache = [
   '/index.html',
   '/styles.css',
   '/script.js',
-  '/icono.jpg', // Si tienes un archivo de icono estático, cambia esto si es necesario
+  '/icono.png', // Si tienes un archivo de icono estático, cambia esto si es necesario
 ];
 
 // Instalación del service worker
